@@ -6,7 +6,7 @@ from rest_framework import generics, decorators
 
 
 class TrendsView(generics.ListAPIView):
-    queryset = Trend.objects.all().order_by('-created_on')
+    queryset = Trend.objects.all().order_by('-created_on')[:10]
     serializer_class = TrendSerializer
 
 
