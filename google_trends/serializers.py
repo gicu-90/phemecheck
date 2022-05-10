@@ -12,4 +12,4 @@ class TrendSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_posts(self, instance):
-        return [PostSerializer(post).data for post in Post.objects.filter()]
+        return [PostSerializer(post).data for post in Post.objects.filter(trend_id=instance.id)]

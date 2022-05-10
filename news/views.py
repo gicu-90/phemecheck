@@ -31,6 +31,5 @@ def generate_news(request):
             serializer = PostSerializer(data={**article, 'trend':registered_trend.pk})
             serializer.is_valid(raise_exception=True)
             serializer.save()
-
     
     return response.Response({}, status.HTTP_200_OK)
