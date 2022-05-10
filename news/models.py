@@ -10,7 +10,7 @@ class Post(models.Model):
     keywords = models.CharField(max_length=250, null=True, blank=True)
     snippet = models.CharField(max_length=250, null=True, blank=True)
     url = models.CharField(max_length=250, null=True, blank=True)
-    image_url = models.CharField(max_length=250, null=True, blank=True)
+    image_url = models.CharField(max_length=2083, null=True, blank=True)
     language = models.CharField(max_length=250, null=True, blank=True)
     published_at = models.DateTimeField(null=True, blank=True)
     source = models.CharField(max_length=250, null=True, blank=True)
