@@ -18,8 +18,7 @@ def get_news(search):
     return json_response
 
 
-@decorators.api_view(['GET'])
-def generate_news(request):
+def generate():
     trends = get_trends()
     # trends = ['samsung']
 
@@ -32,4 +31,8 @@ def generate_news(request):
             serializer.is_valid(raise_exception=True)
             serializer.save()
     
+    
+@decorators.api_view(['GET'])
+def generate_news(request):
+    generate()
     return response.Response({}, status.HTTP_200_OK)
