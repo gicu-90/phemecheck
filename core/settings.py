@@ -35,6 +35,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django_crontab',
     'django.contrib.auth',
     'corsheaders',
     'django.contrib.contenttypes',
@@ -210,3 +211,7 @@ LOGGING = {
                 'handlers': ['console'], 'level': 'INFO', 'propagate': False, },
     }
 }
+
+CRONJOBS = [
+    ('0 1 * * *', 'news.views.generate_news')
+]
