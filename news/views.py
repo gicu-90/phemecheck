@@ -23,8 +23,11 @@ def generate():
     # trends = ['samsung']
 
     for trend in trends:
-        registered_trend = Trend.objects.create(title=trend)
         data = get_news(trend)['data']
+        if not data:
+            continue
+        
+        registered_trend = Trend.objects.create(title=trend)
 
         for article in data:
             serializer = PostSerializer(data={**article, 'trend':registered_trend.pk})

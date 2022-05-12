@@ -20,7 +20,7 @@ def get_trends():
 
     def trending_searches(country):
         data = pytrends.trending_searches(country)
-        for trend in data.head(5)[0].array:
+        for trend in data.head(10)[0].array:
             trends.append(trend)
 
     for country in countries:
